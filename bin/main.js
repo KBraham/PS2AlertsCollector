@@ -2,8 +2,8 @@
 
 console.log("Starting collector");
 
-let MessageParser = require('./message_parser.js');
-let CombatParser = require('./combat_parser.js');
+let MessageParser = require('../lib/message_parser.js');
+let CombatParser = require('../lib/combat_parser.js');
 
 
 console.log("Importing modules [done]");
