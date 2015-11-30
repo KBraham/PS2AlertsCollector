@@ -37,9 +37,6 @@ describe('hooks', function() {
 
   // test cases
   it('should have length of 4', function() {
-    for(let x of a){
-      console.log(x);
-    }
     assert.equal(4, a.length);
   });
 });
