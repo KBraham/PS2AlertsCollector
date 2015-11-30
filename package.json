@@ -1,0 +1,28 @@
+{
+  "name": "alerts_proto",
+  "version": "0.0.1",
+  "description": "An example module to illustrate the usage of a package.json",
+  "author": "Koen Braham <koen@braham.eu>",
+  "contributors": [{
+  "name": "Foo Bar",
+  "email": "foo.bar@example.com"
+}],
+  "bin": {
+  "module-name": "./bin/main.js"
+},
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/nodejitsu/browsenpm.org"
+},
+  "bugs": {
+  "url": "https://github.com/nodejitsu/browsenpm.org/issues"
+},
+  "dependencies": {
+  },
+  "devDependencies": {
+
+  },
+  "private": true,
+  "license": "MIT"
+}
+  
