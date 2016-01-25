@@ -3,7 +3,7 @@
 console.log("Starting collector");
 
 let routerPush = require('../lib/router_push.js');
-let rounterInt = require('../lib/router_int.js');
+let rounterInt = require('../lib/router_internal.js');
 
 console.log("Importing modules [done]");
 
