@@ -2,15 +2,15 @@
 
 console.log("Starting collector");
 
-let routerPush = require('../lib/router_push.js');
-let rounterInt = require('../lib/router_internal.js');
+const routerPush = require('../lib/router_push.js');
+const routerInt = require('../lib/router_internal.js');
+const pf = require('../lib/parsers/parser_facilities.js')
 
 console.log("Importing modules [done]");
 
 
 // let cp = new CombatParser();
-
-
+let modules = [pf];
 
 let messages = [
     {"payload":{"duration_held":"7679","event_name":"FacilityControl","facility_id":"293000","new_faction_id":"3","old_faction_id":"3","timestamp":"1405291671","world_id":"10","zone_id":"4"},"service":"event","type":"serviceMessage"},
@@ -23,6 +23,14 @@ let messages = [
     {"payload":{"duration_held":"2210","event_name":"FacilityControl","facility_id":"222380","new_faction_id":"3","old_faction_id":"3","timestamp":"1405291761","world_id":"10","zone_id":"6"},"service":"event","type":"serviceMessage"}
 ];
 
+routerPush.init();
+routerInt.init();
+
+// Try to register all modules
+for(let m of modules){
+    routerPush.registerReceiver(m);
+    routerInt.registerReceiver(m);    
+}
 
 
 for(let i = 0; i < messages.length; ++i) {
@@ -41,3 +49,5 @@ lineReader.on('line', function (line) {
 lineReader.on('close', function(){
     console.log(`Number of service messages: ${routerPush.number_service_messages()} / ${routerPush.number_messages()}`);    
 });
+
+
